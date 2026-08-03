@@ -260,7 +260,7 @@ function StoryDialogue({ onComplete }: { onComplete: () => void }) {
             animation: slide.speaker === 'pappu' ? 'characterIdle 2.5s ease-in-out infinite' : 'none',
             position: 'relative',
           }}>
-            <img src=`${import.meta.env.BASE_URL}assets/characters/farmer-pappu.png` alt="Pappu"
+            <img src={`${import.meta.env.BASE_URL}assets/characters/farmer-pappu.png`} alt="Pappu"
               style={{
                 width: '100%', height: '100%', objectFit: 'contain',
                 objectPosition: 'bottom center',
@@ -328,7 +328,7 @@ function StoryDialogue({ onComplete }: { onComplete: () => void }) {
             animation: slide.speaker === 'raju' ? 'characterIdle 2.5s ease-in-out infinite' : 'none',
             position: 'relative',
           }}>
-            <img src=`${import.meta.env.BASE_URL}assets/characters/farmer-raju.png` alt="Raju"
+            <img src={`${import.meta.env.BASE_URL}assets/characters/farmer-raju.png`} alt="Raju"
               style={{
                 width: '100%', height: '100%', objectFit: 'contain',
                 objectPosition: 'bottom center',
@@ -775,7 +775,7 @@ function FarmerTutorial({
           width: 80, height: 160,
         }}>
           {/* Farmer illustration */}
-          <img src=`${import.meta.env.BASE_URL}assets/characters/farmer-pappu.png` alt="Farmer"
+          <img src={`${import.meta.env.BASE_URL}assets/characters/farmer-pappu.png`} alt="Farmer"
             style={{
               width: '100%', height: '100%', objectFit: 'contain',
               objectPosition: 'bottom center',
