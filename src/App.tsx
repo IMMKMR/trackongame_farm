@@ -86,30 +86,30 @@ const CROP_COUNT = 9
 
 const CROP_STAGES = {
   wheat: {
-    seed: './assets/crops/wheat/1 - Wheat Seed.png',
-    sprout: './assets/crops/wheat/2 - Wheat Sprout.png',
-    mid: './assets/crops/wheat/3 - Wheat Mid.png',
-    full: './assets/crops/wheat/4 - Wheat Full.png',
-    wilt: './assets/crops/wheat/5 - Wheat Wilt.png',
+    seed: `${import.meta.env.BASE_URL}assets/crops/wheat/1 - Wheat Seed.png`,
+    sprout: `${import.meta.env.BASE_URL}assets/crops/wheat/2 - Wheat Sprout.png`,
+    mid: `${import.meta.env.BASE_URL}assets/crops/wheat/3 - Wheat Mid.png`,
+    full: `${import.meta.env.BASE_URL}assets/crops/wheat/4 - Wheat Full.png`,
+    wilt: `${import.meta.env.BASE_URL}assets/crops/wheat/5 - Wheat Wilt.png`,
   },
   pumpkin: {
-    seed: './assets/crops/pumpkin/1 - Pumpkin Seed.png',
-    sprout: './assets/crops/pumpkin/2 - Pumpkin Sprout.png',
-    mid: './assets/crops/pumpkin/3 - Pumpkin Mid.png',
-    full: './assets/crops/pumpkin/4 - Pumpkin Full.png',
-    wilt: './assets/crops/pumpkin/5 - Pumpkin Wilt.png',
+    seed: `${import.meta.env.BASE_URL}assets/crops/pumpkin/1 - Pumpkin Seed.png`,
+    sprout: `${import.meta.env.BASE_URL}assets/crops/pumpkin/2 - Pumpkin Sprout.png`,
+    mid: `${import.meta.env.BASE_URL}assets/crops/pumpkin/3 - Pumpkin Mid.png`,
+    full: `${import.meta.env.BASE_URL}assets/crops/pumpkin/4 - Pumpkin Full.png`,
+    wilt: `${import.meta.env.BASE_URL}assets/crops/pumpkin/5 - Pumpkin Wilt.png`,
   },
 }
 
 const TILE_ASSETS = {
-  cloud: './assets/tiles/cloud.png',
-  cloudBig: './assets/tiles/cloud big.png',
-  smallClouds: './assets/tiles/small clouds.png',
-  grass: './assets/tiles/grass tile.png',
-  grassH: './assets/tiles/grass  - horizontal.png',
-  ground: './assets/tiles/ground .png',
-  groundH: './assets/tiles/ground  - horizontal.png',
-  terrain: './assets/tiles/Terrain tile.png',
+  cloud: `${import.meta.env.BASE_URL}assets/tiles/cloud.png`,
+  cloudBig: `${import.meta.env.BASE_URL}assets/tiles/cloud big.png`,
+  smallClouds: `${import.meta.env.BASE_URL}assets/tiles/small clouds.png`,
+  grass: `${import.meta.env.BASE_URL}assets/tiles/grass tile.png`,
+  grassH: `${import.meta.env.BASE_URL}assets/tiles/grass  - horizontal.png`,
+  ground: `${import.meta.env.BASE_URL}assets/tiles/ground .png`,
+  groundH: `${import.meta.env.BASE_URL}assets/tiles/ground  - horizontal.png`,
+  terrain: `${import.meta.env.BASE_URL}assets/tiles/Terrain tile.png`,
 }
 
 // ─── Helper: get crop image for bot (always healthy) ───
@@ -260,7 +260,7 @@ function StoryDialogue({ onComplete }: { onComplete: () => void }) {
             animation: slide.speaker === 'pappu' ? 'characterIdle 2.5s ease-in-out infinite' : 'none',
             position: 'relative',
           }}>
-            <img src="./assets/characters/farmer-pappu.png" alt="Pappu"
+            <img src=`${import.meta.env.BASE_URL}assets/characters/farmer-pappu.png` alt="Pappu"
               style={{
                 width: '100%', height: '100%', objectFit: 'contain',
                 objectPosition: 'bottom center',
@@ -328,7 +328,7 @@ function StoryDialogue({ onComplete }: { onComplete: () => void }) {
             animation: slide.speaker === 'raju' ? 'characterIdle 2.5s ease-in-out infinite' : 'none',
             position: 'relative',
           }}>
-            <img src="./assets/characters/farmer-raju.png" alt="Raju"
+            <img src=`${import.meta.env.BASE_URL}assets/characters/farmer-raju.png` alt="Raju"
               style={{
                 width: '100%', height: '100%', objectFit: 'contain',
                 objectPosition: 'bottom center',
@@ -775,7 +775,7 @@ function FarmerTutorial({
           width: 80, height: 160,
         }}>
           {/* Farmer illustration */}
-          <img src="./assets/characters/farmer-pappu.png" alt="Farmer"
+          <img src=`${import.meta.env.BASE_URL}assets/characters/farmer-pappu.png` alt="Farmer"
             style={{
               width: '100%', height: '100%', objectFit: 'contain',
               objectPosition: 'bottom center',
