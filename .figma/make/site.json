@@ -1,0 +1,10 @@
+{
+  "description": "Experience a competitive mobile farming challenge where players manage crops against an AI bot, showcasing the benefits of optimized nutrition strategies.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
