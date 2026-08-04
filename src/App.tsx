@@ -1488,7 +1488,7 @@ export default function App() {
                 zIndex: 15,
                 display: 'flex', flexDirection: 'column', alignItems: 'center',
               }}>
-                {phase === 'growing' && tapCount >= 4 ? (
+                {phase === 'growing' && cropTaps.every(t => t >= 4) ? (
                   <div style={{ position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                     <div style={{
                       position: 'absolute', top: -35,
