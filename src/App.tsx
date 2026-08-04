@@ -1433,7 +1433,7 @@ export default function App() {
                           padding: '2px 4px', borderRadius: 4, border: '1px solid rgba(251,191,36,0.3)',
                           animation: 'fadeInUp 0.3s ease both', textShadow: '0 1px 2px #000',
                         }}>
-                          TIP: 4 SPRAYS PER CROP
+                          TIP: 3 SPRAYS PER CROP
                         </div>
                       )}
                     </div>
@@ -1488,7 +1488,7 @@ export default function App() {
                 zIndex: 15,
                 display: 'flex', flexDirection: 'column', alignItems: 'center',
               }}>
-                {phase === 'growing' && cropTaps.every(t => t >= 4) ? (
+                {phase === 'growing' && cropTaps.every(t => t >= 3) ? (
                   <div style={{ position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                     <div style={{
                       position: 'absolute', top: -35,
