@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Exo+2:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Nunito:wght@400;600;700;800&display=swap');
 
 * {
   box-sizing: border-box;
@@ -7,8 +7,8 @@
 }
 
 body {
-  background: #050a05;
-  font-family: 'Exo 2', sans-serif;
+  background: #f0fdf4;
+  font-family: 'Nunito', sans-serif;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -190,8 +190,8 @@ body {
 }
 
 /* ── Utility Classes ── */
-.font-orbitron { font-family: 'Orbitron', monospace; }
-.font-exo { font-family: 'Exo 2', sans-serif; }
+.font-fredoka { font-family: 'Fredoka', sans-serif; }
+.font-nunito { font-family: 'Nunito', sans-serif; }
 
 .gold-shimmer {
   background: linear-gradient(90deg, #fbbf24, #fde68a, #f59e0b, #fde68a, #fbbf24);
@@ -232,7 +232,7 @@ body {
   border: none;
   border-radius: 10px;
   cursor: pointer;
-  font-family: 'Orbitron', monospace;
+  font-family: 'Fredoka', sans-serif;
   font-weight: 700;
   color: #fff;
   letter-spacing: 2px;
@@ -252,7 +252,7 @@ body {
   border: 1px solid rgba(255,255,255,0.15);
   border-radius: 10px;
   cursor: pointer;
-  font-family: 'Exo 2', sans-serif;
+  font-family: 'Nunito', sans-serif;
   color: rgba(255,255,255,0.5);
   transition: all 0.25s ease;
 }

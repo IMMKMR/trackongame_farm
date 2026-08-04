@@ -164,7 +164,7 @@ function StoryDialogue({ onComplete }: { onComplete: () => void }) {
     <div style={{
       position: 'absolute', inset: 0, zIndex: 60,
       display: 'flex', flexDirection: 'column',
-      background: 'linear-gradient(180deg, #0a1f12 0%, #051a0a 40%, #030d05 100%)',
+      background: 'linear-gradient(180deg, #7dd3fc 0%, #bae6fd 40%, #4ade80 100%)',
       overflow: 'hidden',
     }}>
       {/* Animated background elements */}
@@ -193,13 +193,13 @@ function StoryDialogue({ onComplete }: { onComplete: () => void }) {
         animation: 'fadeInDown 0.6s ease both',
       }}>
         <div style={{
-          fontSize: 7, fontFamily: 'Orbitron', color: 'rgba(74,222,128,0.5)',
+          fontSize: 7, fontFamily: 'Fredoka', color: 'rgba(74,222,128,0.5)',
           letterSpacing: 4, marginBottom: 3,
         }}>
           THE STORY
         </div>
         <div style={{
-          fontSize: 13, fontFamily: 'Orbitron', fontWeight: 900,
+          fontSize: 13, fontFamily: 'Fredoka', fontWeight: 900,
           background: 'linear-gradient(135deg, #4ade80, #fbbf24)',
           WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
           backgroundClip: 'text',
@@ -256,21 +256,22 @@ function StoryDialogue({ onComplete }: { onComplete: () => void }) {
           {/* Name plate */}
           <div style={{
             background: slide.speaker === 'pappu'
-              ? 'linear-gradient(90deg, rgba(249,115,22,0.2), rgba(249,115,22,0.1))'
-              : 'rgba(255,255,255,0.04)',
-            border: `1px solid ${slide.speaker === 'pappu' ? 'rgba(249,115,22,0.4)' : 'rgba(255,255,255,0.1)'}`,
-            borderRadius: 6, padding: '3px 8px', textAlign: 'center',
+              ? 'rgba(255,255,255,0.95)'
+              : 'rgba(255,255,255,0.5)',
+            border: `2px solid ${slide.speaker === 'pappu' ? '#f97316' : 'rgba(255,255,255,0.3)'}`,
+            borderRadius: 8, padding: '4px 10px', textAlign: 'center',
             transition: 'all 0.4s ease',
+            boxShadow: slide.speaker === 'pappu' ? '0 4px 12px rgba(249,115,22,0.15)' : 'none',
           }}>
             <div style={{
-              fontSize: 8, fontFamily: 'Orbitron', fontWeight: 700, letterSpacing: 1.5,
-              color: slide.speaker === 'pappu' ? '#fb923c' : 'rgba(255,255,255,0.3)',
+              fontSize: 8, fontFamily: 'Fredoka', fontWeight: 700, letterSpacing: 1.5,
+              color: slide.speaker === 'pappu' ? '#c2410c' : '#64748b',
               transition: 'color 0.3s',
             }}>
               PAPPU
             </div>
             <div style={{
-              fontSize: 5, color: 'rgba(255,255,255,0.4)', fontFamily: 'Exo 2',
+              fontSize: 5, color: '#475569', fontFamily: 'Nunito',
               lineHeight: 1.3, marginTop: 1,
             }}>
               Confused · Many Products
@@ -285,13 +286,13 @@ function StoryDialogue({ onComplete }: { onComplete: () => void }) {
           zIndex: 5,
         }}>
           <div style={{
-            background: 'rgba(0,0,0,0.8)', border: '1px solid rgba(255,255,255,0.15)',
-            borderRadius: 20, padding: '4px 12px',
-            backdropFilter: 'blur(6px)',
+            background: '#ffffff', border: 'none',
+            borderRadius: 20, padding: '4px 14px',
+            boxShadow: '0 4px 15px rgba(0,0,0,0.1)',
           }}>
             <span style={{
-              fontSize: 11, fontFamily: 'Orbitron', fontWeight: 900,
-              color: 'rgba(255,255,255,0.25)', letterSpacing: 3,
+              fontSize: 11, fontFamily: 'Fredoka', fontWeight: 900,
+              color: '#334155', letterSpacing: 3,
             }}>
               VS
             </span>
@@ -324,21 +325,22 @@ function StoryDialogue({ onComplete }: { onComplete: () => void }) {
           {/* Name plate */}
           <div style={{
             background: slide.speaker === 'raju'
-              ? 'linear-gradient(90deg, rgba(34,197,94,0.2), rgba(34,197,94,0.1))'
-              : 'rgba(255,255,255,0.04)',
-            border: `1px solid ${slide.speaker === 'raju' ? 'rgba(34,197,94,0.4)' : 'rgba(255,255,255,0.1)'}`,
-            borderRadius: 6, padding: '3px 8px', textAlign: 'center',
+              ? 'rgba(255,255,255,0.95)'
+              : 'rgba(255,255,255,0.5)',
+            border: `2px solid ${slide.speaker === 'raju' ? '#22c55e' : 'rgba(255,255,255,0.3)'}`,
+            borderRadius: 8, padding: '4px 10px', textAlign: 'center',
             transition: 'all 0.4s ease',
+            boxShadow: slide.speaker === 'raju' ? '0 4px 12px rgba(34,197,94,0.15)' : 'none',
           }}>
             <div style={{
-              fontSize: 8, fontFamily: 'Orbitron', fontWeight: 700, letterSpacing: 1.5,
-              color: slide.speaker === 'raju' ? '#4ade80' : 'rgba(255,255,255,0.3)',
+              fontSize: 8, fontFamily: 'Fredoka', fontWeight: 700, letterSpacing: 1.5,
+              color: slide.speaker === 'raju' ? '#15803d' : '#64748b',
               transition: 'color 0.3s',
             }}>
               RAJU
             </div>
             <div style={{
-              fontSize: 5, color: 'rgba(255,255,255,0.4)', fontFamily: 'Exo 2',
+              fontSize: 5, color: '#475569', fontFamily: 'Nunito',
               lineHeight: 1.3, marginTop: 1,
             }}>
               Smart · Trackon Gold
@@ -354,8 +356,8 @@ function StoryDialogue({ onComplete }: { onComplete: () => void }) {
       }}>
         <div style={{
           background: isRaju
-            ? 'linear-gradient(135deg, rgba(15,40,15,0.95), rgba(20,50,20,0.95))'
-            : 'linear-gradient(135deg, rgba(40,25,10,0.95), rgba(50,30,15,0.95))',
+            ? 'linear-gradient(135deg, rgba(255,255,255,0.95), rgba(240,255,240,0.95))'
+            : 'linear-gradient(135deg, rgba(255,255,255,0.95), rgba(255,245,235,0.95))',
           border: `1px solid ${isRaju ? 'rgba(74,222,128,0.4)' : 'rgba(249,115,22,0.4)'}`,
           borderRadius: 16, padding: 14,
           backdropFilter: 'blur(10px)',
@@ -376,7 +378,7 @@ function StoryDialogue({ onComplete }: { onComplete: () => void }) {
 
           {/* Speaker name */}
           <div style={{
-            fontSize: 8, fontFamily: 'Orbitron', fontWeight: 700,
+            fontSize: 8, fontFamily: 'Fredoka', fontWeight: 700,
             color: isRaju ? '#4ade80' : '#fb923c',
             letterSpacing: 2, marginBottom: 6,
             display: 'flex', alignItems: 'center', gap: 6,
@@ -400,7 +402,7 @@ function StoryDialogue({ onComplete }: { onComplete: () => void }) {
 
           {/* Dialogue text */}
           <div style={{
-            fontSize: 11, color: '#e8f5ea', fontFamily: 'Exo 2',
+            fontSize: 11, color: '#1e293b', fontFamily: 'Nunito',
             lineHeight: 1.6, marginBottom: 12,
             opacity: textVisible ? 1 : 0,
             transition: 'opacity 0.3s ease 0.2s',
@@ -419,7 +421,7 @@ function StoryDialogue({ onComplete }: { onComplete: () => void }) {
                   background: `${p.color}15`,
                   border: `1px solid ${p.color}40`,
                   borderRadius: 4, color: p.color,
-                  fontFamily: 'Exo 2',
+                  fontFamily: 'Nunito',
                   animation: `fadeIn 0.3s ease ${0.5 + i * 0.1}s both`,
                 }}>
                   {p.icon} {p.name}
@@ -439,7 +441,7 @@ function StoryDialogue({ onComplete }: { onComplete: () => void }) {
             }}>
               <span style={{ fontSize: 12 }}>✨</span>
               <span style={{
-                fontSize: 8, fontFamily: 'Orbitron', fontWeight: 700,
+                fontSize: 8, fontFamily: 'Fredoka', fontWeight: 700,
                 background: 'linear-gradient(90deg, #fbbf24, #4ade80)',
                 WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
               }}>
@@ -455,7 +457,7 @@ function StoryDialogue({ onComplete }: { onComplete: () => void }) {
               background: 'rgba(255,255,255,0.06)',
               border: '1px solid rgba(255,255,255,0.15)',
               borderRadius: 10, cursor: 'pointer',
-              fontFamily: 'Exo 2', fontSize: 9, color: 'rgba(255,255,255,0.45)',
+              fontFamily: 'Nunito', fontSize: 9, color: '#475569',
               transition: 'all 0.25s',
             }}>
               Skip Story
@@ -468,8 +470,8 @@ function StoryDialogue({ onComplete }: { onComplete: () => void }) {
                   ? 'linear-gradient(90deg, #15803d, #22c55e)'
                   : 'linear-gradient(90deg, #c2410c, #f97316)',
               border: 'none', borderRadius: 10, cursor: 'pointer',
-              fontFamily: 'Orbitron', fontSize: 9, fontWeight: 700,
-              color: '#fff', letterSpacing: 2,
+              fontFamily: 'Fredoka', fontSize: 9, fontWeight: 700,
+              color: '#ffffff', letterSpacing: 2,
               boxShadow: currentSlide === STORY_DIALOGUE.length - 1
                 ? '0 4px 18px rgba(34,197,94,0.4)'
                 : '0 4px 14px rgba(0,0,0,0.3)',
@@ -520,8 +522,8 @@ function SkyBackground({ fast, side }: { fast: boolean; side: 'bot' | 'player' }
     <div style={{
       position: 'absolute', inset: 0,
       background: isBot
-        ? 'linear-gradient(180deg, #1a4a6a 0%, #1a5a35 70%, #0d4f2e 100%)'
-        : 'linear-gradient(180deg, #1a3a5f 0%, #2a4a2e 70%, #1a3520 100%)',
+        ? 'linear-gradient(180deg, #38bdf8 0%, #7dd3fc 60%, #4ade80 100%)'
+        : 'linear-gradient(180deg, #7dd3fc 0%, #bae6fd 60%, #86efac 100%)',
       overflow: 'hidden',
     }}>
       {/* Sun */}
@@ -563,7 +565,7 @@ function SprayEffect({ x, y, color, id, text }: { x: number; y: number; color: s
       {text && (
         <div style={{
           position: 'absolute', bottom: '100%', left: '50%', transform: 'translateX(-50%)',
-          fontSize: 7, fontFamily: 'Orbitron', fontWeight: 800, color: color,
+          fontSize: 7, fontFamily: 'Fredoka', fontWeight: 800, color: color,
           textShadow: '0 2px 4px rgba(0,0,0,0.9)', whiteSpace: 'nowrap',
           animation: 'fadeInUp 0.6s ease both',
         }}>
@@ -652,7 +654,7 @@ function PlayerCrop({ phase, health, index, taps }: { phase: Phase; health: numb
             animationDelay: `${index * 150}ms`,
           }}>
             <div style={{
-              fontSize: 5, fontFamily: 'Orbitron', fontWeight: 800, 
+              fontSize: 5, fontFamily: 'Fredoka', fontWeight: 800, 
               color: isOverfed ? '#ef4444' : (isPerfect ? '#22c55e' : '#fb923c'),
               background: 'rgba(0,0,0,0.7)', padding: '2px 4px', borderRadius: 4,
               border: `1px solid ${isOverfed ? '#ef444488' : (isPerfect ? '#22c55e88' : '#fb923c88')}`,
@@ -700,7 +702,7 @@ function HUDLabel({ label, side }: { label: string; side: 'bot' | 'player' }) {
         boxShadow: `0 0 6px ${isBot ? '#22c55e' : '#f97316'}`,
       }} />
       <span style={{
-        fontSize: 8, fontFamily: 'Orbitron', fontWeight: 600,
+        fontSize: 8, fontFamily: 'Fredoka', fontWeight: 600,
         color: isBot ? '#4ade80' : '#fb923c', letterSpacing: 1.5,
       }}>
         {label}
@@ -718,8 +720,8 @@ function StatBar({ label, value, color, delay }: { label: string; value: number;
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-        <span style={{ fontSize: 7, color: 'rgba(255,255,255,0.55)', fontFamily: 'Exo 2' }}>{label}</span>
-        <span style={{ fontSize: 7, color, fontFamily: 'Orbitron', fontWeight: 600 }}>{value}%</span>
+        <span style={{ fontSize: 7, color: '#64748b', fontFamily: 'Nunito' }}>{label}</span>
+        <span style={{ fontSize: 7, color, fontFamily: 'Fredoka', fontWeight: 600 }}>{value}%</span>
       </div>
       <div style={{ height: 5, background: 'rgba(255,255,255,0.08)', borderRadius: 3, overflow: 'hidden' }}>
         <div style={{
@@ -786,7 +788,7 @@ function FarmerTutorial({
       {/* Speech bubble */}
       <div style={{
         width: '90%', marginTop: 10,
-        background: 'linear-gradient(135deg, rgba(10,30,15,0.95), rgba(15,40,20,0.95))',
+        background: 'linear-gradient(135deg, #ffffff, #f0fdf4)',
         border: '1px solid rgba(74,222,128,0.45)',
         borderRadius: 16, padding: 14,
         boxShadow: '0 0 35px rgba(74,222,128,0.12)',
@@ -817,13 +819,13 @@ function FarmerTutorial({
         )}
 
         <div style={{
-          fontSize: 11, color: '#e2fce5', fontFamily: 'Exo 2',
+          fontSize: 11, color: '#1e293b', fontFamily: 'Nunito',
           lineHeight: 1.6, marginBottom: 6,
         }}>
           {data.text}
         </div>
         <div style={{
-          fontSize: 8, color: 'rgba(255,255,255,0.45)', fontFamily: 'Exo 2',
+          fontSize: 8, color: '#475569', fontFamily: 'Nunito',
           marginBottom: 12,
         }}>
           {data.sub}
@@ -835,8 +837,8 @@ function FarmerTutorial({
               flex: 1, padding: '9px 0',
               background: 'linear-gradient(90deg, #15803d, #22c55e)',
               border: 'none', borderRadius: 10, cursor: 'pointer',
-              fontFamily: 'Orbitron', fontSize: 9, fontWeight: 700,
-              color: '#fff', letterSpacing: 2,
+              fontFamily: 'Fredoka', fontSize: 9, fontWeight: 700,
+              color: '#ffffff', letterSpacing: 2,
               boxShadow: '0 4px 16px rgba(34,197,94,0.3)',
             }}>
               GOT IT!
@@ -848,7 +850,7 @@ function FarmerTutorial({
                 background: 'rgba(255,255,255,0.06)',
                 border: '1px solid rgba(255,255,255,0.15)',
                 borderRadius: 10, cursor: 'pointer',
-                fontFamily: 'Exo 2', fontSize: 9, color: 'rgba(255,255,255,0.45)',
+                fontFamily: 'Nunito', fontSize: 9, color: '#475569',
               }}>
                 Skip
               </button>
@@ -858,8 +860,8 @@ function FarmerTutorial({
                   ? 'linear-gradient(90deg, #15803d, #22c55e)'
                   : 'linear-gradient(90deg, #1d4ed8, #3b82f6)',
                 border: 'none', borderRadius: 10, cursor: 'pointer',
-                fontFamily: 'Orbitron', fontSize: 9, fontWeight: 700,
-                color: '#fff', letterSpacing: 2,
+                fontFamily: 'Fredoka', fontSize: 9, fontWeight: 700,
+                color: '#ffffff', letterSpacing: 2,
                 boxShadow: step === total - 1
                   ? '0 4px 18px rgba(34,197,94,0.4)'
                   : '0 4px 16px rgba(59,130,246,0.3)',
@@ -914,13 +916,13 @@ function Scoreboard({ visible, playerHealth, trackonUsed, otherUsed }: { visible
         {/* Header */}
         <div style={{ textAlign: 'center', marginBottom: 14 }}>
           <div style={{
-            fontSize: 8, fontFamily: 'Orbitron', color: 'rgba(255,255,255,0.4)',
+            fontSize: 8, fontFamily: 'Fredoka', color: '#475569',
             letterSpacing: 3, marginBottom: 4,
           }}>
             HARVEST RESULTS
           </div>
           <div style={{
-            fontSize: 18, fontFamily: 'Orbitron', fontWeight: 900, letterSpacing: 1,
+            fontSize: 18, fontFamily: 'Fredoka', fontWeight: 900, letterSpacing: 1,
             background: 'linear-gradient(90deg, #fbbf24, #fde68a, #f59e0b)',
             WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
           }}>
@@ -952,7 +954,7 @@ function Scoreboard({ visible, playerHealth, trackonUsed, otherUsed }: { visible
               )}
               <div>
                 <div style={{
-                  fontSize: 10, color: (!isWinner || isTie) ? '#4ade80' : '#f87171', fontFamily: 'Orbitron',
+                  fontSize: 10, color: (!isWinner || isTie) ? '#4ade80' : '#f87171', fontFamily: 'Fredoka',
                   letterSpacing: 1, fontWeight: 700,
                 }}>
                   RAJU · TRACKON GOLD
@@ -961,11 +963,11 @@ function Scoreboard({ visible, playerHealth, trackonUsed, otherUsed }: { visible
             </div>
             <div style={{ textAlign: 'right' }}>
               <div style={{
-                fontSize: 22, fontFamily: 'Orbitron', fontWeight: 900, color: '#4ade80',
+                fontSize: 22, fontFamily: 'Fredoka', fontWeight: 900, color: '#4ade80',
               }}>
                 94%
               </div>
-              <div style={{ fontSize: 7, color: 'rgba(74,222,128,0.5)', fontFamily: 'Exo 2' }}>
+              <div style={{ fontSize: 7, color: 'rgba(74,222,128,0.5)', fontFamily: 'Nunito' }}>
                 yield score
               </div>
             </div>
@@ -997,7 +999,7 @@ function Scoreboard({ visible, playerHealth, trackonUsed, otherUsed }: { visible
               {!isWinner && <span style={{ fontSize: 22 }}>🌾</span>}
               <div>
                 <div style={{
-                  fontSize: 10, color: isWinner ? '#4ade80' : '#fb923c', fontFamily: 'Orbitron', letterSpacing: 1, fontWeight: 700,
+                  fontSize: 10, color: isWinner ? '#4ade80' : '#fb923c', fontFamily: 'Fredoka', letterSpacing: 1, fontWeight: 700,
                 }}>
                   PAPPU · {trackonUsed && !otherUsed ? 'TRACKON ONLY' : 'MULTI-PRODUCT'}
                 </div>
@@ -1005,11 +1007,11 @@ function Scoreboard({ visible, playerHealth, trackonUsed, otherUsed }: { visible
             </div>
             <div style={{ textAlign: 'right' }}>
               <div style={{
-                fontSize: 22, fontFamily: 'Orbitron', fontWeight: 900, color: isWinner ? '#4ade80' : '#f97316',
+                fontSize: 22, fontFamily: 'Fredoka', fontWeight: 900, color: isWinner ? '#4ade80' : '#f97316',
               }}>
                 {playerYield}%
               </div>
-              <div style={{ fontSize: 7, color: isWinner ? 'rgba(74,222,128,0.5)' : 'rgba(249,115,22,0.5)', fontFamily: 'Exo 2' }}>
+              <div style={{ fontSize: 7, color: isWinner ? 'rgba(74,222,128,0.5)' : 'rgba(249,115,22,0.5)', fontFamily: 'Nunito' }}>
                 yield score
               </div>
             </div>
@@ -1033,12 +1035,12 @@ function Scoreboard({ visible, playerHealth, trackonUsed, otherUsed }: { visible
           <span style={{ fontSize: 16 }}>✨</span>
           <div>
             <div style={{
-              fontSize: 7, color: '#fbbf24', fontFamily: 'Orbitron', letterSpacing: 1,
+              fontSize: 7, color: '#fbbf24', fontFamily: 'Fredoka', letterSpacing: 1,
             }}>
               THE LESSON
             </div>
             <div style={{
-              fontSize: 8, color: 'rgba(255,255,255,0.7)', fontFamily: 'Exo 2',
+              fontSize: 8, color: 'rgba(255,255,255,0.7)', fontFamily: 'Nunito',
               marginTop: 2, lineHeight: 1.5,
             }}>
               One optimised solution beats many guesses. Trackon Gold wins every season.
@@ -1051,8 +1053,8 @@ function Scoreboard({ visible, playerHealth, trackonUsed, otherUsed }: { visible
           width: '100%', padding: '11px 0',
           background: 'linear-gradient(90deg, #15803d, #22c55e)',
           border: 'none', borderRadius: 10, cursor: 'pointer',
-          fontFamily: 'Orbitron', fontSize: 10, fontWeight: 700,
-          color: '#fff', letterSpacing: 2,
+          fontFamily: 'Fredoka', fontSize: 10, fontWeight: 700,
+          color: '#ffffff', letterSpacing: 2,
           boxShadow: '0 4px 22px rgba(34,197,94,0.4)',
           transition: 'all 0.25s',
         }}>
@@ -1192,29 +1194,33 @@ export default function App() {
   return (
     <div style={{
       height: '100vh', width: '100vw', overflow: 'hidden', display: 'flex', justifyContent: 'center',
-      background: 'radial-gradient(ellipse at 30% 20%, #0d2b10, #050a05 65%)',
+      background: 'linear-gradient(180deg, #f0fdf4, #bbf7d0)',
     }}>
       <div style={{
         display: 'flex', flexDirection: 'column',
         width: '100%', maxWidth: 500, height: '100%',
         position: 'relative',
+        borderLeft: '2px solid #86efac',
+        borderRight: '2px solid #86efac',
+        boxShadow: '0 0 30px rgba(0,0,0,0.05)',
+        background: '#ffffff',
       }}>
 
         {/* Title (Floating over game or fixed at top) */}
         <div style={{ 
           textAlign: 'center', padding: '12px 0 8px', zIndex: 10,
-          background: 'linear-gradient(180deg, rgba(5,10,5,0.9) 0%, rgba(5,10,5,0) 100%)',
+          background: 'linear-gradient(180deg, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0) 100%)',
         }}>
           <div style={{
-            fontSize: 8, fontFamily: 'Orbitron', color: 'rgba(74,222,128,0.5)',
+            fontSize: 8, fontFamily: 'Fredoka', color: '#15803d',
             letterSpacing: 5, marginBottom: 4,
           }}>
             INTERACTIVE FARM CHALLENGE
           </div>
           <h1 style={{
-            fontSize: 20, fontFamily: 'Orbitron', fontWeight: 900, margin: 0, letterSpacing: 1,
-            background: 'linear-gradient(135deg, #4ade80, #fbbf24, #22c55e)',
-            WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
+            fontSize: 20, fontFamily: 'Fredoka', fontWeight: 900, margin: 0, letterSpacing: 1,
+            color: '#eab308',
+            textShadow: '0 2px 4px rgba(0,0,0,0.05)',
           }}>
             TRACKON GOLD
           </h1>
@@ -1295,16 +1301,16 @@ export default function App() {
                   position: 'absolute', top: 14, left: 8, right: 8,
                   display: 'flex', justifyContent: 'space-between', alignItems: 'center', zIndex: 10,
                 }}>
-                  <HUDLabel label="RAJU · AI" side="bot" />
+                  <HUDLabel label="RAJU" side="bot" />
                   <div style={{
-                    background: 'rgba(0,0,0,0.55)', borderRadius: 6, padding: '3px 8px',
+                    background: 'rgba(255,255,255,0.7)', borderRadius: 6, padding: '3px 8px',
                     border: '1px solid rgba(251,191,36,0.35)',
                     display: 'flex', alignItems: 'center', gap: 4,
                     backdropFilter: 'blur(4px)',
                   }}>
                     <span style={{ fontSize: 8 }}>✨</span>
                     <span style={{
-                      fontSize: 6, fontFamily: 'Orbitron', fontWeight: 600,
+                      fontSize: 6, fontFamily: 'Fredoka', fontWeight: 600,
                       color: '#fbbf24', letterSpacing: 1,
                     }}>
                       TRACKON GOLD
@@ -1323,7 +1329,7 @@ export default function App() {
                     backdropFilter: 'blur(4px)',
                   }}>
                     <div style={{
-                      fontSize: 6, fontFamily: 'Orbitron', color: '#4ade80', letterSpacing: 0.5,
+                      fontSize: 6, fontFamily: 'Fredoka', color: '#4ade80', letterSpacing: 0.5,
                     }}>
                       {botPulse ? '✓ APPLYING' : '✓ OPTIMAL'}
                     </div>
@@ -1408,14 +1414,14 @@ export default function App() {
                   {phase === 'growing' && (
                     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 2 }}>
                       <div style={{
-                        background: 'rgba(0,0,0,0.55)', borderRadius: 6, padding: '3px 8px',
+                        background: 'rgba(255,255,255,0.7)', borderRadius: 6, padding: '3px 8px',
                         border: `1px solid ${PRODUCTS[selectedProduct].color}44`,
                         backdropFilter: 'blur(4px)',
                         display: 'flex', alignItems: 'center', gap: 3,
                       }}>
                         <span style={{ fontSize: 9 }}>{PRODUCTS[selectedProduct].icon}</span>
                         <span style={{
-                          fontSize: 6, fontFamily: 'Orbitron',
+                          fontSize: 6, fontFamily: 'Fredoka',
                           color: PRODUCTS[selectedProduct].color,
                         }}>
                           {PRODUCTS[selectedProduct].name.slice(0, 12)}
@@ -1423,7 +1429,7 @@ export default function App() {
                       </div>
                       {PRODUCTS[selectedProduct].name === 'Trackon Gold' && (
                         <div style={{
-                          fontSize: 5, color: '#fbbf24', fontFamily: 'Orbitron', background: 'rgba(0,0,0,0.6)',
+                          fontSize: 5, color: '#fbbf24', fontFamily: 'Fredoka', background: 'rgba(0,0,0,0.6)',
                           padding: '2px 4px', borderRadius: 4, border: '1px solid rgba(251,191,36,0.3)',
                           animation: 'fadeInUp 0.3s ease both', textShadow: '0 1px 2px #000',
                         }}>
@@ -1448,7 +1454,7 @@ export default function App() {
                       👇
                     </div>
                     <div style={{
-                      fontSize: 7, color: 'rgba(255,255,255,0.55)', fontFamily: 'Orbitron',
+                      fontSize: 7, color: '#64748b', fontFamily: 'Fredoka',
                       letterSpacing: 1.5, marginTop: 4,
                     }}>
                       TAP TO APPLY
@@ -1460,12 +1466,12 @@ export default function App() {
                 {tapCount > 0 && phase === 'growing' && (
                   <div style={{
                     position: 'absolute', bottom: 32, left: 8,
-                    background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(255,255,255,0.12)',
+                    background: 'rgba(255,255,255,0.7)', border: '1px solid rgba(255,255,255,0.12)',
                     borderRadius: 6, padding: '3px 6px',
                     backdropFilter: 'blur(4px)',
                   }}>
                     <span style={{
-                      fontSize: 6, fontFamily: 'Orbitron', color: 'rgba(255,255,255,0.45)',
+                      fontSize: 6, fontFamily: 'Fredoka', color: '#475569',
                     }}>
                       APPS: {tapCount}
                     </span>
@@ -1491,19 +1497,19 @@ export default function App() {
                     animation: tapCount > 2 ? 'pulseButton 2s infinite' : 'fadeInUp 0.5s ease both',
                   }}>
                     <span style={{ fontSize: 8 }}>⏩</span>
-                    <span style={{ fontSize: 7, fontFamily: 'Orbitron', fontWeight: 800, color: '#fff', letterSpacing: 1 }}>
+                    <span style={{ fontSize: 7, fontFamily: 'Fredoka', fontWeight: 800, color: '#ffffff', letterSpacing: 1 }}>
                       HARVEST
                     </span>
                   </button>
                 ) : (
                   <div style={{
-                    background: 'rgba(0,0,0,0.9)', border: '1px solid rgba(255,255,255,0.08)',
+                    background: 'rgba(255,255,255,0.95)', border: '1px solid rgba(255,255,255,0.08)',
                     borderRadius: 20, padding: '2px 10px', pointerEvents: 'none',
                     backdropFilter: 'blur(4px)',
                   }}>
                     <span style={{
-                      fontSize: 7, fontFamily: 'Orbitron', fontWeight: 700,
-                      color: 'rgba(255,255,255,0.4)', letterSpacing: 2,
+                      fontSize: 7, fontFamily: 'Fredoka', fontWeight: 700,
+                      color: '#475569', letterSpacing: 2,
                     }}>
                       VS
                     </span>
@@ -1526,14 +1532,14 @@ export default function App() {
                 backdropFilter: 'blur(6px)',
               }}>
                 <div style={{
-                  fontSize: 12, fontFamily: 'Orbitron', fontWeight: 900,
+                  fontSize: 12, fontFamily: 'Fredoka', fontWeight: 900,
                   color: '#fbbf24', letterSpacing: 2,
                   display: 'flex', alignItems: 'center', gap: 6,
                 }}>
                   ⏩ ×120
                 </div>
                 <div style={{
-                  fontSize: 7, color: 'rgba(255,255,255,0.5)', fontFamily: 'Exo 2',
+                  fontSize: 7, color: '#64748b', fontFamily: 'Nunito',
                   textAlign: 'center', marginTop: 2, letterSpacing: 1.5,
                 }}>
                   FAST FORWARD
@@ -1570,7 +1576,7 @@ export default function App() {
         {phase === 'growing' && (
           <div style={{
             width: '100%',
-            background: 'rgba(8,16,8,0.95)',
+            background: 'rgba(255,255,255,0.95)',
             borderTop: '1px solid rgba(74,222,128,0.18)',
             padding: '16px 0',
             backdropFilter: 'blur(10px)',
@@ -1578,7 +1584,7 @@ export default function App() {
             zIndex: 20,
           }}>
             <div style={{
-              fontSize: 7, fontFamily: 'Orbitron', color: 'rgba(255,255,255,0.3)',
+              fontSize: 7, fontFamily: 'Fredoka', color: '#64748b',
               letterSpacing: 2, textAlign: 'center', marginBottom: 12,
             }}>
               SELECT PRODUCT · TAP FARM TO APPLY
@@ -1604,8 +1610,8 @@ export default function App() {
                   width: selectedProduct === i ? 64 : 52, 
                   height: selectedProduct === i ? 64 : 52,
                   borderRadius: '50%',
-                  background: selectedProduct === i ? `${p.color}25` : 'rgba(255,255,255,0.03)',
-                  border: `2px solid ${selectedProduct === i ? p.color : 'rgba(255,255,255,0.08)'}`,
+                  background: selectedProduct === i ? `${p.color}25` : 'rgba(0,0,0,0.03)',
+                  border: `2px solid ${selectedProduct === i ? p.color : 'rgba(0,0,0,0.1)'}`,
                   cursor: 'pointer',
                   transition: 'all 0.3s cubic-bezier(0.34,1.56,0.64,1)',
                   position: 'relative',
@@ -1624,7 +1630,7 @@ export default function App() {
             }}>
               <span style={{
                 fontSize: 12,
-                fontFamily: 'Orbitron',
+                fontFamily: 'Fredoka',
                 fontWeight: 700,
                 color: PRODUCTS[selectedProduct].color,
                 letterSpacing: 1,
@@ -1658,7 +1664,7 @@ export default function App() {
                     transition: 'all 0.3s ease',
                   }} />
                   <span style={{
-                    fontSize: 5.5, fontFamily: 'Orbitron',
+                    fontSize: 5.5, fontFamily: 'Fredoka',
                     color: thisIdx === current ? 'rgba(74,222,128,0.7)' : 'rgba(255,255,255,0.3)',
                     letterSpacing: 0.5,
                   }}>
@@ -1670,14 +1676,7 @@ export default function App() {
           </div>
         )}
 
-        {/* Footer */}
-        <div style={{
-          fontSize: 8, color: 'rgba(255,255,255,0.2)', fontFamily: 'Exo 2', letterSpacing: 1,
-          textAlign: 'center', padding: '8px 0',
-          background: '#050a05',
-        }}>
-          Trackon Gold · Farming Challenge
-        </div>
+
       </div>
     </div>
   )
