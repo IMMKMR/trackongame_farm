@@ -1234,10 +1234,12 @@ export default function App() {
           background: '#070d07',
           position: 'relative', overflow: 'hidden',
           display: 'flex', flexDirection: 'column',
+          boxSizing: 'border-box',
         }}>
           <div style={{
             position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column',
             overflow: 'hidden',
+            boxSizing: 'border-box',
           }}>
 
             {/* ── START SCREEN ── */}
@@ -1247,6 +1249,7 @@ export default function App() {
                 display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'space-evenly',
                 background: 'linear-gradient(180deg, #f0fdf4 0%, #bbf7d0 50%, #86efac 100%)',
                 padding: '20px',
+                boxSizing: 'border-box',
               }}>
                 
                 {/* Title */}
@@ -1258,7 +1261,7 @@ export default function App() {
                     INTERACTIVE FARM CHALLENGE
                   </div>
                   <h1 style={{
-                    fontSize: 42, fontFamily: 'Fredoka', fontWeight: 900, margin: 0, letterSpacing: 2,
+                    fontSize: 38, fontFamily: 'Fredoka', fontWeight: 900, margin: 0, letterSpacing: 2,
                     color: '#eab308', textShadow: '0 4px 10px rgba(0,0,0,0.15)',
                     lineHeight: 1.1,
                   }}>
@@ -1269,7 +1272,7 @@ export default function App() {
                 {/* Hero Image */}
                 <img src={`${import.meta.env.BASE_URL}assets/aa4_1.png`} alt="Start Animation" 
                   style={{ 
-                    height: 'auto', maxHeight: '40%', width: 'auto', maxWidth: '85%', objectFit: 'contain', 
+                    height: 'auto', maxHeight: '35%', width: 'auto', maxWidth: '85%', objectFit: 'contain', 
                     animation: 'farmerBounce 4s infinite ease-in-out', 
                     filter: 'drop-shadow(0 10px 15px rgba(0,0,0,0.2))' 
                   }} 
