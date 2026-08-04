@@ -1207,24 +1207,26 @@ export default function App() {
       }}>
 
         {/* Title (Floating over game or fixed at top) */}
-        <div style={{ 
-          textAlign: 'center', padding: '12px 0 8px', zIndex: 10,
-          background: 'linear-gradient(180deg, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0) 100%)',
-        }}>
-          <div style={{
-            fontSize: 14, fontFamily: 'Fredoka', color: '#15803d',
-            letterSpacing: 5, marginBottom: 4,
+        {phase !== 'start' && (
+          <div style={{ 
+            textAlign: 'center', padding: '12px 0 8px', zIndex: 10,
+            background: 'linear-gradient(180deg, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0) 100%)',
           }}>
-            INTERACTIVE FARM CHALLENGE
+            <div style={{
+              fontSize: 14, fontFamily: 'Fredoka', color: '#15803d',
+              letterSpacing: 5, marginBottom: 4,
+            }}>
+              INTERACTIVE FARM CHALLENGE
+            </div>
+            <h1 style={{
+              fontSize: 24, fontFamily: 'Fredoka', fontWeight: 900, margin: 0, letterSpacing: 1,
+              color: '#eab308',
+              textShadow: '0 2px 4px rgba(0,0,0,0.05)',
+            }}>
+              TRACKON GOLD
+            </h1>
           </div>
-          <h1 style={{
-            fontSize: 24, fontFamily: 'Fredoka', fontWeight: 900, margin: 0, letterSpacing: 1,
-            color: '#eab308',
-            textShadow: '0 2px 4px rgba(0,0,0,0.05)',
-          }}>
-            TRACKON GOLD
-          </h1>
-        </div>
+        )}
 
         {/* Game Area (formerly phone frame) */}
         <div style={{
@@ -1243,31 +1245,59 @@ export default function App() {
               <div style={{
                 position: 'absolute', inset: 0, zIndex: 50,
                 display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
-                background: 'linear-gradient(180deg, #f0fdf4, #bbf7d0)',
-                padding: 20,
+                background: 'linear-gradient(180deg, #f0fdf4 0%, #bbf7d0 50%, #86efac 100%)',
+                padding: '40px 20px',
               }}>
-                <img src={`${import.meta.env.BASE_URL}assets/characters/farmer-pappu.png`} alt="Farmer" style={{ width: 140, marginBottom: 20, animation: 'farmerBounce 2s infinite' }} />
                 
-                <button onClick={() => setPhase('story')} style={{
-                  background: 'linear-gradient(90deg, #15803d, #22c55e)',
-                  border: 'none', borderRadius: 24, padding: '16px 48px',
-                  cursor: 'pointer', boxShadow: '0 8px 25px rgba(34,197,94,0.4)',
-                  fontSize: 24, fontFamily: 'Fredoka', fontWeight: 900, color: '#ffffff', letterSpacing: 2,
-                  marginBottom: 16, width: '100%', maxWidth: 280,
-                  animation: 'pulseButton 1.5s infinite',
-                }}>
-                  PLAY
-                </button>
+                {/* Title */}
+                <div style={{ textAlign: 'center', marginBottom: 40, animation: 'fadeInDown 1s ease' }}>
+                  <div style={{
+                    fontSize: 14, fontFamily: 'Fredoka', color: '#15803d',
+                    letterSpacing: 6, marginBottom: 8, fontWeight: 700,
+                  }}>
+                    INTERACTIVE FARM CHALLENGE
+                  </div>
+                  <h1 style={{
+                    fontSize: 42, fontFamily: 'Fredoka', fontWeight: 900, margin: 0, letterSpacing: 2,
+                    color: '#eab308', textShadow: '0 4px 10px rgba(0,0,0,0.15)',
+                    lineHeight: 1.1,
+                  }}>
+                    TRACKON<br/>GOLD
+                  </h1>
+                </div>
+
+                {/* Hero Image */}
+                <img src={`${import.meta.env.BASE_URL}assets/aa4_1.png`} alt="Start Animation" 
+                  style={{ 
+                    width: '85%', maxWidth: 320, marginBottom: 50, 
+                    animation: 'farmerBounce 4s infinite ease-in-out', 
+                    filter: 'drop-shadow(0 10px 15px rgba(0,0,0,0.2))' 
+                  }} 
+                />
                 
-                <button onClick={() => alert("Maybe next time!")} style={{
-                  background: 'transparent',
-                  border: '2px solid #94a3b8', borderRadius: 24, padding: '12px 48px',
-                  cursor: 'pointer',
-                  fontSize: 18, fontFamily: 'Fredoka', fontWeight: 700, color: '#64748b', letterSpacing: 1,
-                  width: '100%', maxWidth: 280,
-                }}>
-                  CANCEL
-                </button>
+                {/* Action Buttons */}
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 16, width: '100%', maxWidth: 280, animation: 'fadeInUp 1s ease 0.3s both' }}>
+                  <button onClick={() => setPhase('story')} style={{
+                    background: 'linear-gradient(135deg, #15803d, #22c55e)',
+                    border: 'none', borderRadius: 30, padding: '18px 0',
+                    cursor: 'pointer', boxShadow: '0 8px 25px rgba(34,197,94,0.4)',
+                    fontSize: 24, fontFamily: 'Fredoka', fontWeight: 900, color: '#ffffff', letterSpacing: 2,
+                    width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 10,
+                    animation: 'pulseButton 2s infinite',
+                  }}>
+                    ▶ PLAY NOW
+                  </button>
+                  
+                  <button onClick={() => alert("Maybe next time!")} style={{
+                    background: 'rgba(255,255,255,0.5)',
+                    border: '2px solid rgba(148,163,184,0.3)', borderRadius: 30, padding: '14px 0',
+                    cursor: 'pointer',
+                    fontSize: 16, fontFamily: 'Fredoka', fontWeight: 700, color: '#64748b', letterSpacing: 1,
+                    width: '100%', transition: 'all 0.2s ease',
+                  }}>
+                    CANCEL
+                  </button>
+                </div>
               </div>
             )}
 
