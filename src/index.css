@@ -38,8 +38,8 @@ body {
 }
 
 @keyframes sunPulse {
-  0%, 100% { filter: blur(2px); box-shadow: 0 0 18px 6px rgba(253,230,138,0.4); }
-  50% { filter: blur(3px); box-shadow: 0 0 28px 10px rgba(253,230,138,0.6); }
+  0%, 100% { filter: blur(2px); }
+  50% { filter: blur(3px); }
 }
 
 /* ── Crop Animations ── */
@@ -98,8 +98,8 @@ body {
 }
 
 @keyframes winnerGlow {
-  0%, 100% { box-shadow: 0 0 20px rgba(34,197,94,0.5), 0 0 40px rgba(34,197,94,0.2); }
-  50% { box-shadow: 0 0 35px rgba(34,197,94,0.7), 0 0 70px rgba(34,197,94,0.35); }
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
 }
 
 @keyframes trophyBounce {
@@ -169,8 +169,8 @@ body {
 }
 
 @keyframes glowPulse {
-  0%, 100% { box-shadow: 0 0 15px rgba(74,222,128,0.2); }
-  50% { box-shadow: 0 0 30px rgba(74,222,128,0.45); }
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 1; }
 }
 
 @keyframes barFill {
@@ -220,12 +220,10 @@ body {
 
 .game-border {
   border: 1px solid rgba(74, 222, 128, 0.3);
-  box-shadow: 0 0 15px rgba(74, 222, 128, 0.1), inset 0 0 15px rgba(0,0,0,0.5);
 }
 
 .player-border {
   border: 1px solid rgba(249, 115, 22, 0.3);
-  box-shadow: 0 0 15px rgba(249, 115, 22, 0.1), inset 0 0 15px rgba(0,0,0,0.5);
 }
 
 /* ── Button Styles ── */
@@ -238,18 +236,15 @@ body {
   font-weight: 700;
   color: #fff;
   letter-spacing: 2px;
-  box-shadow: 0 4px 20px rgba(34,197,94,0.35);
   transition: all 0.25s ease;
 }
 
 .btn-primary:hover {
-  box-shadow: 0 6px 28px rgba(34,197,94,0.5);
   transform: translateY(-1px);
 }
 
 .btn-primary:active {
   transform: translateY(0);
-  box-shadow: 0 2px 12px rgba(34,197,94,0.3);
 }
 
 .btn-secondary {

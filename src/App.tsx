@@ -169,20 +169,6 @@ function StoryDialogue({ onComplete }: { onComplete: () => void }) {
     }}>
       {/* Animated background elements */}
       <div style={{ position: 'absolute', inset: 0, overflow: 'hidden', pointerEvents: 'none' }}>
-        {/* Stars */}
-        {Array.from({ length: 20 }).map((_, i) => (
-          <div key={i} style={{
-            position: 'absolute',
-            left: `${5 + (i * 47) % 90}%`,
-            top: `${3 + (i * 31) % 60}%`,
-            width: i % 3 === 0 ? 3 : 2,
-            height: i % 3 === 0 ? 3 : 2,
-            borderRadius: '50%',
-            background: 'rgba(255,255,255,0.4)',
-            animation: `dotBlink ${1.5 + (i % 3) * 0.5}s ease-in-out infinite`,
-            animationDelay: `${(i * 0.2) % 2}s`,
-          }} />
-        ))}
         {/* Ground gradient */}
         <div style={{
           position: 'absolute', bottom: 0, left: 0, right: 0, height: '35%',
@@ -193,7 +179,7 @@ function StoryDialogue({ onComplete }: { onComplete: () => void }) {
           position: 'absolute', bottom: 0, left: 0, right: 0, height: 30,
           display: 'flex', overflow: 'hidden',
         }}>
-          {Array.from({ length: 16 }).map((_, i) => (
+          {Array.from({ length: 50 }).map((_, i) => (
             <img key={i} src={TILE_ASSETS.grass} alt=""
               style={{ width: 24, height: 24, imageRendering: 'pixelated', opacity: 0.6 }}
             />
@@ -241,7 +227,7 @@ function StoryDialogue({ onComplete }: { onComplete: () => void }) {
       {/* Characters area — full-body farmer illustrations */}
       <div style={{
         flex: 1, display: 'flex', alignItems: 'flex-end', justifyContent: 'center',
-        gap: 6, padding: '0 8px', position: 'relative', zIndex: 2,
+        gap: 16, padding: '0 8px 40px', position: 'relative', zIndex: 2,
         minHeight: 0,
       }}>
         {/* Pappu (left) — Confused Farmer */}
@@ -255,7 +241,7 @@ function StoryDialogue({ onComplete }: { onComplete: () => void }) {
         }}>
           {/* Farmer illustration */}
           <div style={{
-            width: 80, height: 160,
+            width: 140, height: 280,
             display: 'flex', alignItems: 'flex-end', justifyContent: 'center',
             animation: slide.speaker === 'pappu' ? 'characterIdle 2.5s ease-in-out infinite' : 'none',
             position: 'relative',
@@ -294,7 +280,7 @@ function StoryDialogue({ onComplete }: { onComplete: () => void }) {
 
         {/* VS badge */}
         <div style={{
-          position: 'absolute', top: '35%', left: '50%',
+          position: 'absolute', top: '50%', left: '50%',
           transform: 'translate(-50%, -50%)',
           zIndex: 5,
         }}>
@@ -323,7 +309,7 @@ function StoryDialogue({ onComplete }: { onComplete: () => void }) {
         }}>
           {/* Farmer illustration */}
           <div style={{
-            width: 80, height: 160,
+            width: 140, height: 280,
             display: 'flex', alignItems: 'flex-end', justifyContent: 'center',
             animation: slide.speaker === 'raju' ? 'characterIdle 2.5s ease-in-out infinite' : 'none',
             position: 'relative',
@@ -772,7 +758,7 @@ function FarmerTutorial({
       }}>
         <div style={{
           position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center',
-          width: 80, height: 160,
+          width: 140, height: 280,
         }}>
           {/* Farmer illustration */}
           <img src={`${import.meta.env.BASE_URL}assets/characters/farmer-pappu.png`} alt="Farmer"
@@ -1205,17 +1191,20 @@ export default function App() {
 
   return (
     <div style={{
-      minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center',
+      height: '100vh', width: '100vw', overflow: 'hidden', display: 'flex', justifyContent: 'center',
       background: 'radial-gradient(ellipse at 30% 20%, #0d2b10, #050a05 65%)',
-      padding: '16px 12px',
     }}>
       <div style={{
-        display: 'flex', flexDirection: 'column', alignItems: 'center',
-        gap: 14, width: '100%', maxWidth: 380,
+        display: 'flex', flexDirection: 'column',
+        width: '100%', maxWidth: 500, height: '100%',
+        position: 'relative',
       }}>
 
-        {/* Title */}
-        <div style={{ textAlign: 'center', animation: 'fadeInDown 0.6s ease both' }}>
+        {/* Title (Floating over game or fixed at top) */}
+        <div style={{ 
+          textAlign: 'center', padding: '12px 0 8px', zIndex: 10,
+          background: 'linear-gradient(180deg, rgba(5,10,5,0.9) 0%, rgba(5,10,5,0) 100%)',
+        }}>
           <div style={{
             fontSize: 8, fontFamily: 'Orbitron', color: 'rgba(74,222,128,0.5)',
             letterSpacing: 5, marginBottom: 4,
@@ -1223,38 +1212,24 @@ export default function App() {
             INTERACTIVE FARM CHALLENGE
           </div>
           <h1 style={{
-            fontSize: 22, fontFamily: 'Orbitron', fontWeight: 900, margin: 0, letterSpacing: 1,
+            fontSize: 20, fontFamily: 'Orbitron', fontWeight: 900, margin: 0, letterSpacing: 1,
             background: 'linear-gradient(135deg, #4ade80, #fbbf24, #22c55e)',
             WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
           }}>
             TRACKON GOLD
           </h1>
-          <div style={{
-            fontSize: 8, color: 'rgba(255,255,255,0.3)', fontFamily: 'Exo 2',
-            marginTop: 4, letterSpacing: 2,
-          }}>
-            TAP YOUR CROPS · BEAT THE BOT
-          </div>
         </div>
 
-        {/* Phone frame */}
+        {/* Game Area (formerly phone frame) */}
         <div style={{
-          width: 280, height: 500,
-          background: '#070d07', borderRadius: 32,
-          border: '2.5px solid rgba(74,222,128,0.18)',
-          boxShadow: '0 0 60px rgba(74,222,128,0.06), 0 30px 80px rgba(0,0,0,0.8), inset 0 0 30px rgba(0,0,0,0.5)',
+          flex: 1, width: '100%',
+          background: '#070d07',
           position: 'relative', overflow: 'hidden',
+          display: 'flex', flexDirection: 'column',
         }}>
-          {/* Notch */}
-          <div style={{
-            position: 'absolute', top: 7, left: '50%', transform: 'translateX(-50%)',
-            width: 65, height: 7, background: '#040804', borderRadius: 5, zIndex: 20,
-            boxShadow: 'inset 0 1px 2px rgba(0,0,0,0.5)',
-          }} />
-
           <div style={{
             position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column',
-            borderRadius: 30, overflow: 'hidden',
+            overflow: 'hidden',
           }}>
 
             {/* ── STORY PHASE ── */}
@@ -1280,7 +1255,7 @@ export default function App() {
                     position: 'absolute', top: 0, left: 0, right: 0,
                     display: 'flex', height: 14,
                   }}>
-                    {Array.from({ length: 20 }).map((_, i) => (
+                    {Array.from({ length: 50 }).map((_, i) => (
                       <img key={i} src={TILE_ASSETS.grass} alt=""
                         style={{ width: 16, height: 14, imageRendering: 'pixelated' }}
                       />
@@ -1401,7 +1376,7 @@ export default function App() {
                       position: 'absolute', top: 0, left: 0, right: 0,
                       display: 'flex', height: 10, opacity: 0.4,
                     }}>
-                      {Array.from({ length: 20 }).map((_, i) => (
+                      {Array.from({ length: 50 }).map((_, i) => (
                         <img key={i} src={TILE_ASSETS.ground} alt=""
                           style={{ width: 16, height: 10, imageRendering: 'pixelated' }}
                         />
@@ -1594,48 +1569,76 @@ export default function App() {
         {/* Product tray */}
         {phase === 'growing' && (
           <div style={{
-            width: 280,
-            background: 'rgba(8,16,8,0.92)',
-            border: '1px solid rgba(74,222,128,0.18)',
-            borderRadius: 16, padding: 12,
+            width: '100%',
+            background: 'rgba(8,16,8,0.95)',
+            borderTop: '1px solid rgba(74,222,128,0.18)',
+            padding: '16px 0',
             backdropFilter: 'blur(10px)',
             animation: 'fadeInUp 0.4s ease both',
-            boxShadow: '0 -4px 20px rgba(0,0,0,0.3)',
+            zIndex: 20,
           }}>
             <div style={{
               fontSize: 7, fontFamily: 'Orbitron', color: 'rgba(255,255,255,0.3)',
-              letterSpacing: 2, textAlign: 'center', marginBottom: 8,
+              letterSpacing: 2, textAlign: 'center', marginBottom: 12,
             }}>
               SELECT PRODUCT · TAP FARM TO APPLY
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(6, 1fr)', gap: 5 }}>
+            
+            {/* Snapchat style filter selector */}
+            <div style={{ 
+              display: 'flex', 
+              gap: 16, 
+              overflowX: 'auto', 
+              padding: '10px 0',
+              scrollSnapType: 'x mandatory',
+              WebkitOverflowScrolling: 'touch',
+              alignItems: 'center',
+            }}>
+              {/* Spacers to allow centering of first/last items */}
+              <div style={{ flex: '0 0 auto', width: 'calc(50% - 40px)' }} />
               {PRODUCTS.map((p, i) => (
                 <button key={i} onClick={() => setSelectedProduct(i)} style={{
-                  display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 3,
-                  background: selectedProduct === i ? `${p.color}18` : 'rgba(255,255,255,0.03)',
-                  border: `1.5px solid ${selectedProduct === i ? p.color : 'rgba(255,255,255,0.08)'}`,
-                  borderRadius: 8, padding: '6px 2px', cursor: 'pointer',
-                  transition: 'all 0.25s ease',
-                  boxShadow: selectedProduct === i ? `0 0 12px ${p.color}33` : 'none',
-                  transform: selectedProduct === i ? 'scale(1.05)' : 'scale(1)',
+                  flex: '0 0 auto',
+                  scrollSnapAlign: 'center',
+                  display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
+                  width: selectedProduct === i ? 64 : 52, 
+                  height: selectedProduct === i ? 64 : 52,
+                  borderRadius: '50%',
+                  background: selectedProduct === i ? `${p.color}25` : 'rgba(255,255,255,0.03)',
+                  border: `2px solid ${selectedProduct === i ? p.color : 'rgba(255,255,255,0.08)'}`,
+                  cursor: 'pointer',
+                  transition: 'all 0.3s cubic-bezier(0.34,1.56,0.64,1)',
+                  position: 'relative',
                 }}>
-                  <span style={{ fontSize: 15 }}>{p.icon}</span>
-                  <span style={{
-                    fontSize: 5.5, color: selectedProduct === i ? p.color : 'rgba(255,255,255,0.4)',
-                    textAlign: 'center', lineHeight: 1.2, fontFamily: 'Exo 2',
-                    transition: 'color 0.2s',
-                  }}>
-                    {p.name.split(' ')[0]}
-                  </span>
+                  <span style={{ fontSize: selectedProduct === i ? 28 : 22, transition: 'all 0.3s' }}>{p.icon}</span>
                 </button>
               ))}
+              <div style={{ flex: '0 0 auto', width: 'calc(50% - 40px)' }} />
+            </div>
+            
+            {/* Selected Product Name */}
+            <div style={{
+              textAlign: 'center', 
+              marginTop: 4,
+              minHeight: 18,
+            }}>
+              <span style={{
+                fontSize: 12,
+                fontFamily: 'Orbitron',
+                fontWeight: 700,
+                color: PRODUCTS[selectedProduct].color,
+                letterSpacing: 1,
+                animation: 'fadeIn 0.3s ease',
+              }}>
+                {PRODUCTS[selectedProduct].name.toUpperCase()}
+              </span>
             </div>
           </div>
         )}
 
         {/* Phase progress dots */}
         {phase !== 'story' && phase !== 'tutorial' && phase !== 'scoreboard' && (
-          <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
+          <div style={{ display: 'flex', gap: 12, alignItems: 'center', justifyContent: 'center', padding: '12px 0' }}>
             {(['planting', 'growing', 'fastforward', 'harvest'] as Phase[]).map((p) => {
               const order = ['planting', 'growing', 'fastforward', 'harvest']
               const current = order.indexOf(phase)
@@ -1669,9 +1672,11 @@ export default function App() {
 
         {/* Footer */}
         <div style={{
-          fontSize: 7, color: 'rgba(255,255,255,0.15)', fontFamily: 'Exo 2', letterSpacing: 1,
+          fontSize: 8, color: 'rgba(255,255,255,0.2)', fontFamily: 'Exo 2', letterSpacing: 1,
+          textAlign: 'center', padding: '8px 0',
+          background: '#050a05',
         }}>
-          Trackon Gold · Farming Challenge Game
+          Trackon Gold · Farming Challenge
         </div>
       </div>
     </div>
