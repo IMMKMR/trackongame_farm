@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 
 // ─── Types ───
-type Phase = 'story' | 'tutorial' | 'planting' | 'growing' | 'fastforward' | 'harvest' | 'scoreboard'
+type Phase = 'start' | 'story' | 'tutorial' | 'planting' | 'growing' | 'fastforward' | 'harvest' | 'scoreboard'
 
 // ─── Constants ───
 const PRODUCTS = [
@@ -1069,7 +1069,7 @@ function Scoreboard({ visible, playerHealth, trackonUsed, otherUsed }: { visible
 // ═══  MAIN APP  ═══
 // ═══════════════════════════════════════════════════
 export default function App() {
-  const [phase, setPhase] = useState<Phase>('story')
+  const [phase, setPhase] = useState<Phase>('start')
   const [tutorialStep, setTutorialStep] = useState(0)
   const [hint, setHint] = useState<string | null>(null)
   const [selectedProduct, setSelectedProduct] = useState(0)
@@ -1238,13 +1238,46 @@ export default function App() {
             overflow: 'hidden',
           }}>
 
+            {/* ── START SCREEN ── */}
+            {phase === 'start' && (
+              <div style={{
+                position: 'absolute', inset: 0, zIndex: 50,
+                display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
+                background: 'linear-gradient(180deg, #f0fdf4, #bbf7d0)',
+                padding: 20,
+              }}>
+                <img src={`${import.meta.env.BASE_URL}assets/characters/farmer-pappu.png`} alt="Farmer" style={{ width: 140, marginBottom: 20, animation: 'farmerBounce 2s infinite' }} />
+                
+                <button onClick={() => setPhase('story')} style={{
+                  background: 'linear-gradient(90deg, #15803d, #22c55e)',
+                  border: 'none', borderRadius: 24, padding: '16px 48px',
+                  cursor: 'pointer', boxShadow: '0 8px 25px rgba(34,197,94,0.4)',
+                  fontSize: 24, fontFamily: 'Fredoka', fontWeight: 900, color: '#ffffff', letterSpacing: 2,
+                  marginBottom: 16, width: '100%', maxWidth: 280,
+                  animation: 'pulseButton 1.5s infinite',
+                }}>
+                  PLAY
+                </button>
+                
+                <button onClick={() => alert("Maybe next time!")} style={{
+                  background: 'transparent',
+                  border: '2px solid #94a3b8', borderRadius: 24, padding: '12px 48px',
+                  cursor: 'pointer',
+                  fontSize: 18, fontFamily: 'Fredoka', fontWeight: 700, color: '#64748b', letterSpacing: 1,
+                  width: '100%', maxWidth: 280,
+                }}>
+                  CANCEL
+                </button>
+              </div>
+            )}
+
             {/* ── STORY PHASE ── */}
             {phase === 'story' && (
               <StoryDialogue onComplete={() => setPhase('tutorial')} />
             )}
 
             {/* ── TOP HALF – BOT ── */}
-            {phase !== 'story' && (
+            {phase !== 'story' && phase !== 'start' && (
               <div style={{
                 flex: 1, position: 'relative', overflow: 'hidden',
                 borderBottom: '2px solid rgba(255,255,255,0.06)',
@@ -1658,7 +1691,7 @@ export default function App() {
         )}
 
         {/* Phase progress dots */}
-        {phase !== 'story' && phase !== 'tutorial' && phase !== 'scoreboard' && (
+        {phase !== 'story' && phase !== 'start' && phase !== 'tutorial' && phase !== 'scoreboard' && (
           <div style={{ display: 'flex', gap: 12, alignItems: 'center', justifyContent: 'center', padding: '12px 0' }}>
             {(['planting', 'growing', 'fastforward', 'harvest'] as Phase[]).map((p) => {
               const order = ['planting', 'growing', 'fastforward', 'harvest']
