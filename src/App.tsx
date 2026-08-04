@@ -1488,28 +1488,43 @@ export default function App() {
                 zIndex: 15,
                 display: 'flex', flexDirection: 'column', alignItems: 'center',
               }}>
-                {phase === 'growing' && tapCount > 0 ? (
-                  <button onClick={triggerFastForward} style={{
-                    background: 'linear-gradient(90deg, #1d4ed8, #3b82f6)',
-                    border: '1px solid rgba(147,197,253,0.3)', borderRadius: 8, padding: '4px 10px',
-                    cursor: 'pointer', boxShadow: '0 4px 15px rgba(59,130,246,0.4)',
-                    display: 'flex', alignItems: 'center', gap: 4,
-                    animation: tapCount > 2 ? 'pulseButton 2s infinite' : 'fadeInUp 0.5s ease both',
-                  }}>
-                    <span style={{ fontSize: 14 }}>⏩</span>
-                    <span style={{ fontSize: 12, fontFamily: 'Fredoka', fontWeight: 800, color: '#ffffff', letterSpacing: 1 }}>
-                      HARVEST
-                    </span>
-                  </button>
+                {phase === 'growing' && tapCount >= 4 ? (
+                  <div style={{ position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                    <div style={{
+                      position: 'absolute', top: -35,
+                      background: '#eab308', padding: '4px 10px', borderRadius: 8,
+                      fontSize: 12, fontFamily: 'Fredoka', fontWeight: 800, color: '#ffffff',
+                      whiteSpace: 'nowrap', animation: 'farmerBounce 1s infinite',
+                      boxShadow: '0 4px 10px rgba(0,0,0,0.1)',
+                    }}>
+                      READY TO HARVEST!
+                      <div style={{
+                        position: 'absolute', bottom: -4, left: '50%', transform: 'translateX(-50%) rotate(45deg)',
+                        width: 8, height: 8, background: '#eab308'
+                      }} />
+                    </div>
+                    <button onClick={triggerFastForward} style={{
+                      background: 'linear-gradient(90deg, #15803d, #22c55e)',
+                      border: 'none', borderRadius: 24, padding: '8px 24px',
+                      cursor: 'pointer', boxShadow: '0 6px 20px rgba(34,197,94,0.4)',
+                      display: 'flex', alignItems: 'center', gap: 8,
+                      animation: 'pulseButton 1.5s infinite',
+                    }}>
+                      <span style={{ fontSize: 16 }}>🌾</span>
+                      <span style={{ fontSize: 16, fontFamily: 'Fredoka', fontWeight: 800, color: '#ffffff', letterSpacing: 1 }}>
+                        HARVEST
+                      </span>
+                    </button>
+                  </div>
                 ) : (
                   <div style={{
-                    background: 'rgba(255,255,255,0.95)', border: '1px solid rgba(255,255,255,0.08)',
-                    borderRadius: 20, padding: '2px 10px', pointerEvents: 'none',
-                    backdropFilter: 'blur(4px)',
+                    background: '#ffffff', border: 'none',
+                    borderRadius: 20, padding: '4px 14px',
+                    boxShadow: '0 4px 15px rgba(0,0,0,0.1)',
                   }}>
                     <span style={{
-                      fontSize: 12, fontFamily: 'Fredoka', fontWeight: 700,
-                      color: '#475569', letterSpacing: 2,
+                      fontSize: 16, fontFamily: 'Fredoka', fontWeight: 900,
+                      color: '#334155', letterSpacing: 3,
                     }}>
                       VS
                     </span>
