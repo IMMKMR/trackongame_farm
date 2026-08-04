@@ -193,13 +193,13 @@ function StoryDialogue({ onComplete }: { onComplete: () => void }) {
         animation: 'fadeInDown 0.6s ease both',
       }}>
         <div style={{
-          fontSize: 7, fontFamily: 'Fredoka', color: 'rgba(74,222,128,0.5)',
+          fontSize: 12, fontFamily: 'Fredoka', color: 'rgba(74,222,128,0.5)',
           letterSpacing: 4, marginBottom: 3,
         }}>
           THE STORY
         </div>
         <div style={{
-          fontSize: 13, fontFamily: 'Fredoka', fontWeight: 900,
+          fontSize: 18, fontFamily: 'Fredoka', fontWeight: 900,
           background: 'linear-gradient(135deg, #4ade80, #fbbf24)',
           WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
           backgroundClip: 'text',
@@ -241,7 +241,7 @@ function StoryDialogue({ onComplete }: { onComplete: () => void }) {
         }}>
           {/* Farmer illustration */}
           <div style={{
-            width: 140, height: 280,
+            width: '40vw', maxWidth: 140, height: '35vh', maxHeight: 280, minHeight: 180,
             display: 'flex', alignItems: 'flex-end', justifyContent: 'center',
             animation: slide.speaker === 'pappu' ? 'characterIdle 2.5s ease-in-out infinite' : 'none',
             position: 'relative',
@@ -264,14 +264,14 @@ function StoryDialogue({ onComplete }: { onComplete: () => void }) {
             boxShadow: slide.speaker === 'pappu' ? '0 4px 12px rgba(249,115,22,0.15)' : 'none',
           }}>
             <div style={{
-              fontSize: 8, fontFamily: 'Fredoka', fontWeight: 700, letterSpacing: 1.5,
+              fontSize: 14, fontFamily: 'Fredoka', fontWeight: 700, letterSpacing: 1.5,
               color: slide.speaker === 'pappu' ? '#c2410c' : '#64748b',
               transition: 'color 0.3s',
             }}>
               PAPPU
             </div>
             <div style={{
-              fontSize: 5, color: '#475569', fontFamily: 'Nunito',
+              fontSize: 10, color: '#475569', fontFamily: 'Nunito',
               lineHeight: 1.3, marginTop: 1,
             }}>
               Confused · Many Products
@@ -291,7 +291,7 @@ function StoryDialogue({ onComplete }: { onComplete: () => void }) {
             boxShadow: '0 4px 15px rgba(0,0,0,0.1)',
           }}>
             <span style={{
-              fontSize: 11, fontFamily: 'Fredoka', fontWeight: 900,
+              fontSize: 16, fontFamily: 'Fredoka', fontWeight: 900,
               color: '#334155', letterSpacing: 3,
             }}>
               VS
@@ -310,7 +310,7 @@ function StoryDialogue({ onComplete }: { onComplete: () => void }) {
         }}>
           {/* Farmer illustration */}
           <div style={{
-            width: 140, height: 280,
+            width: '40vw', maxWidth: 140, height: '35vh', maxHeight: 280, minHeight: 180,
             display: 'flex', alignItems: 'flex-end', justifyContent: 'center',
             animation: slide.speaker === 'raju' ? 'characterIdle 2.5s ease-in-out infinite' : 'none',
             position: 'relative',
@@ -333,14 +333,14 @@ function StoryDialogue({ onComplete }: { onComplete: () => void }) {
             boxShadow: slide.speaker === 'raju' ? '0 4px 12px rgba(34,197,94,0.15)' : 'none',
           }}>
             <div style={{
-              fontSize: 8, fontFamily: 'Fredoka', fontWeight: 700, letterSpacing: 1.5,
+              fontSize: 14, fontFamily: 'Fredoka', fontWeight: 700, letterSpacing: 1.5,
               color: slide.speaker === 'raju' ? '#15803d' : '#64748b',
               transition: 'color 0.3s',
             }}>
               RAJU
             </div>
             <div style={{
-              fontSize: 5, color: '#475569', fontFamily: 'Nunito',
+              fontSize: 10, color: '#475569', fontFamily: 'Nunito',
               lineHeight: 1.3, marginTop: 1,
             }}>
               Smart · Trackon Gold
@@ -378,7 +378,7 @@ function StoryDialogue({ onComplete }: { onComplete: () => void }) {
 
           {/* Speaker name */}
           <div style={{
-            fontSize: 8, fontFamily: 'Fredoka', fontWeight: 700,
+            fontSize: 14, fontFamily: 'Fredoka', fontWeight: 700,
             color: isRaju ? '#4ade80' : '#fb923c',
             letterSpacing: 2, marginBottom: 6,
             display: 'flex', alignItems: 'center', gap: 6,
@@ -391,7 +391,7 @@ function StoryDialogue({ onComplete }: { onComplete: () => void }) {
             {slide.name}
             {isRaju && (
               <span style={{
-                fontSize: 5, background: 'rgba(34,197,94,0.2)',
+                fontSize: 10, background: 'rgba(34,197,94,0.2)',
                 border: '1px solid rgba(34,197,94,0.3)',
                 borderRadius: 3, padding: '1px 4px', color: '#4ade80',
               }}>
@@ -402,7 +402,7 @@ function StoryDialogue({ onComplete }: { onComplete: () => void }) {
 
           {/* Dialogue text */}
           <div style={{
-            fontSize: 11, color: '#1e293b', fontFamily: 'Nunito',
+            fontSize: 16, color: '#1e293b', fontFamily: 'Nunito',
             lineHeight: 1.6, marginBottom: 12,
             opacity: textVisible ? 1 : 0,
             transition: 'opacity 0.3s ease 0.2s',
@@ -417,7 +417,7 @@ function StoryDialogue({ onComplete }: { onComplete: () => void }) {
             }}>
               {PRODUCTS.slice(0, 4).map((p, i) => (
                 <div key={i} style={{
-                  fontSize: 6, padding: '2px 6px',
+                  fontSize: 11, padding: '2px 6px',
                   background: `${p.color}15`,
                   border: `1px solid ${p.color}40`,
                   borderRadius: 4, color: p.color,
@@ -439,9 +439,9 @@ function StoryDialogue({ onComplete }: { onComplete: () => void }) {
               borderRadius: 8, padding: '4px 10px', marginBottom: 10,
               animation: 'scaleIn 0.5s ease 0.5s both',
             }}>
-              <span style={{ fontSize: 12 }}>✨</span>
+              <span style={{ fontSize: 18 }}>✨</span>
               <span style={{
-                fontSize: 8, fontFamily: 'Fredoka', fontWeight: 700,
+                fontSize: 14, fontFamily: 'Fredoka', fontWeight: 700,
                 background: 'linear-gradient(90deg, #fbbf24, #4ade80)',
                 WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
               }}>
@@ -457,7 +457,7 @@ function StoryDialogue({ onComplete }: { onComplete: () => void }) {
               background: 'rgba(255,255,255,0.06)',
               border: '1px solid rgba(255,255,255,0.15)',
               borderRadius: 10, cursor: 'pointer',
-              fontFamily: 'Nunito', fontSize: 9, color: '#475569',
+              fontFamily: 'Nunito', fontSize: 14, color: '#475569',
               transition: 'all 0.25s',
             }}>
               Skip Story
@@ -470,7 +470,7 @@ function StoryDialogue({ onComplete }: { onComplete: () => void }) {
                   ? 'linear-gradient(90deg, #15803d, #22c55e)'
                   : 'linear-gradient(90deg, #c2410c, #f97316)',
               border: 'none', borderRadius: 10, cursor: 'pointer',
-              fontFamily: 'Fredoka', fontSize: 9, fontWeight: 700,
+              fontFamily: 'Fredoka', fontSize: 14, fontWeight: 700,
               color: '#ffffff', letterSpacing: 2,
               boxShadow: currentSlide === STORY_DIALOGUE.length - 1
                 ? '0 4px 18px rgba(34,197,94,0.4)'
@@ -558,14 +558,14 @@ function SprayEffect({ x, y, color, id, text }: { x: number; y: number; color: s
       <div style={{
         position: 'absolute', inset: 0,
         display: 'flex', alignItems: 'center', justifyContent: 'center',
-        fontSize: 16,
+        fontSize: 20,
       }}>
         💧
       </div>
       {text && (
         <div style={{
           position: 'absolute', bottom: '100%', left: '50%', transform: 'translateX(-50%)',
-          fontSize: 7, fontFamily: 'Fredoka', fontWeight: 800, color: color,
+          fontSize: 12, fontFamily: 'Fredoka', fontWeight: 800, color: color,
           textShadow: '0 2px 4px rgba(0,0,0,0.9)', whiteSpace: 'nowrap',
           animation: 'fadeInUp 0.6s ease both',
         }}>
@@ -654,7 +654,7 @@ function PlayerCrop({ phase, health, index, taps }: { phase: Phase; health: numb
             animationDelay: `${index * 150}ms`,
           }}>
             <div style={{
-              fontSize: 5, fontFamily: 'Fredoka', fontWeight: 800, 
+              fontSize: 10, fontFamily: 'Fredoka', fontWeight: 800, 
               color: isOverfed ? '#ef4444' : (isPerfect ? '#22c55e' : '#fb923c'),
               background: 'rgba(0,0,0,0.7)', padding: '2px 4px', borderRadius: 4,
               border: `1px solid ${isOverfed ? '#ef444488' : (isPerfect ? '#22c55e88' : '#fb923c88')}`,
@@ -668,7 +668,7 @@ function PlayerCrop({ phase, health, index, taps }: { phase: Phase; health: numb
                 </>
               ))}
             </div>
-            {!isPerfect && <div style={{ fontSize: 8 }}>👇</div>}
+            {!isPerfect && <div style={{ fontSize: 14 }}>👇</div>}
           </div>
         </div>
       )}
@@ -702,7 +702,7 @@ function HUDLabel({ label, side }: { label: string; side: 'bot' | 'player' }) {
         boxShadow: `0 0 6px ${isBot ? '#22c55e' : '#f97316'}`,
       }} />
       <span style={{
-        fontSize: 8, fontFamily: 'Fredoka', fontWeight: 600,
+        fontSize: 14, fontFamily: 'Fredoka', fontWeight: 600,
         color: isBot ? '#4ade80' : '#fb923c', letterSpacing: 1.5,
       }}>
         {label}
@@ -720,8 +720,8 @@ function StatBar({ label, value, color, delay }: { label: string; value: number;
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-        <span style={{ fontSize: 7, color: '#64748b', fontFamily: 'Nunito' }}>{label}</span>
-        <span style={{ fontSize: 7, color, fontFamily: 'Fredoka', fontWeight: 600 }}>{value}%</span>
+        <span style={{ fontSize: 12, color: '#64748b', fontFamily: 'Nunito' }}>{label}</span>
+        <span style={{ fontSize: 12, color, fontFamily: 'Fredoka', fontWeight: 600 }}>{value}%</span>
       </div>
       <div style={{ height: 5, background: 'rgba(255,255,255,0.08)', borderRadius: 3, overflow: 'hidden' }}>
         <div style={{
@@ -760,7 +760,7 @@ function FarmerTutorial({
       }}>
         <div style={{
           position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center',
-          width: 140, height: 280,
+          width: '45vw', maxWidth: 140, height: '40vh', maxHeight: 280, minHeight: 180,
         }}>
           {/* Farmer illustration */}
           <img src={`${import.meta.env.BASE_URL}assets/characters/farmer-pappu.png`} alt="Farmer"
@@ -776,7 +776,7 @@ function FarmerTutorial({
             width: 32, height: 32, borderRadius: '50%',
             background: 'linear-gradient(135deg, #fde68a, #fbbf24)',
             display: 'flex', alignItems: 'center', justifyContent: 'center',
-            fontSize: 18, border: '2px solid #f59e0b',
+            fontSize: 22, border: '2px solid #f59e0b',
             boxShadow: '0 4px 15px rgba(0,0,0,0.5)',
             animation: 'bubblePop 0.4s cubic-bezier(0.34,1.56,0.64,1) both 0.3s',
           }}>
@@ -819,13 +819,13 @@ function FarmerTutorial({
         )}
 
         <div style={{
-          fontSize: 11, color: '#1e293b', fontFamily: 'Nunito',
+          fontSize: 16, color: '#1e293b', fontFamily: 'Nunito',
           lineHeight: 1.6, marginBottom: 6,
         }}>
           {data.text}
         </div>
         <div style={{
-          fontSize: 8, color: '#475569', fontFamily: 'Nunito',
+          fontSize: 14, color: '#475569', fontFamily: 'Nunito',
           marginBottom: 12,
         }}>
           {data.sub}
@@ -837,7 +837,7 @@ function FarmerTutorial({
               flex: 1, padding: '9px 0',
               background: 'linear-gradient(90deg, #15803d, #22c55e)',
               border: 'none', borderRadius: 10, cursor: 'pointer',
-              fontFamily: 'Fredoka', fontSize: 9, fontWeight: 700,
+              fontFamily: 'Fredoka', fontSize: 14, fontWeight: 700,
               color: '#ffffff', letterSpacing: 2,
               boxShadow: '0 4px 16px rgba(34,197,94,0.3)',
             }}>
@@ -850,7 +850,7 @@ function FarmerTutorial({
                 background: 'rgba(255,255,255,0.06)',
                 border: '1px solid rgba(255,255,255,0.15)',
                 borderRadius: 10, cursor: 'pointer',
-                fontFamily: 'Nunito', fontSize: 9, color: '#475569',
+                fontFamily: 'Nunito', fontSize: 14, color: '#475569',
               }}>
                 Skip
               </button>
@@ -860,7 +860,7 @@ function FarmerTutorial({
                   ? 'linear-gradient(90deg, #15803d, #22c55e)'
                   : 'linear-gradient(90deg, #1d4ed8, #3b82f6)',
                 border: 'none', borderRadius: 10, cursor: 'pointer',
-                fontFamily: 'Fredoka', fontSize: 9, fontWeight: 700,
+                fontFamily: 'Fredoka', fontSize: 14, fontWeight: 700,
                 color: '#ffffff', letterSpacing: 2,
                 boxShadow: step === total - 1
                   ? '0 4px 18px rgba(34,197,94,0.4)'
@@ -916,13 +916,13 @@ function Scoreboard({ visible, playerHealth, trackonUsed, otherUsed }: { visible
         {/* Header */}
         <div style={{ textAlign: 'center', marginBottom: 14 }}>
           <div style={{
-            fontSize: 8, fontFamily: 'Fredoka', color: '#475569',
+            fontSize: 14, fontFamily: 'Fredoka', color: '#475569',
             letterSpacing: 3, marginBottom: 4,
           }}>
             HARVEST RESULTS
           </div>
           <div style={{
-            fontSize: 18, fontFamily: 'Fredoka', fontWeight: 900, letterSpacing: 1,
+            fontSize: 22, fontFamily: 'Fredoka', fontWeight: 900, letterSpacing: 1,
             background: 'linear-gradient(90deg, #fbbf24, #fde68a, #f59e0b)',
             WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
           }}>
@@ -945,16 +945,16 @@ function Scoreboard({ visible, playerHealth, trackonUsed, otherUsed }: { visible
             <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
               {(!isWinner || isTie) ? (
                 <span style={{
-                  fontSize: 26,
+                  fontSize: 30,
                   animation: 'trophyBounce 1.5s ease-in-out infinite',
                   display: 'inline-block',
                 }}>🏆</span>
               ) : (
-                <span style={{ fontSize: 22 }}>🥀</span>
+                <span style={{ fontSize: 26 }}>🥀</span>
               )}
               <div>
                 <div style={{
-                  fontSize: 10, color: (!isWinner || isTie) ? '#4ade80' : '#f87171', fontFamily: 'Fredoka',
+                  fontSize: 16, color: (!isWinner || isTie) ? '#4ade80' : '#f87171', fontFamily: 'Fredoka',
                   letterSpacing: 1, fontWeight: 700,
                 }}>
                   RAJU · TRACKON GOLD
@@ -963,11 +963,11 @@ function Scoreboard({ visible, playerHealth, trackonUsed, otherUsed }: { visible
             </div>
             <div style={{ textAlign: 'right' }}>
               <div style={{
-                fontSize: 22, fontFamily: 'Fredoka', fontWeight: 900, color: '#4ade80',
+                fontSize: 26, fontFamily: 'Fredoka', fontWeight: 900, color: '#4ade80',
               }}>
                 94%
               </div>
-              <div style={{ fontSize: 7, color: 'rgba(74,222,128,0.5)', fontFamily: 'Nunito' }}>
+              <div style={{ fontSize: 12, color: 'rgba(74,222,128,0.5)', fontFamily: 'Nunito' }}>
                 yield score
               </div>
             </div>
@@ -991,15 +991,15 @@ function Scoreboard({ visible, playerHealth, trackonUsed, otherUsed }: { visible
             <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
               {isWinner && (
                 <span style={{
-                  fontSize: 26,
+                  fontSize: 30,
                   animation: 'trophyBounce 1.5s ease-in-out infinite',
                   display: 'inline-block',
                 }}>🏆</span>
               )}
-              {!isWinner && <span style={{ fontSize: 22 }}>🌾</span>}
+              {!isWinner && <span style={{ fontSize: 26 }}>🌾</span>}
               <div>
                 <div style={{
-                  fontSize: 10, color: isWinner ? '#4ade80' : '#fb923c', fontFamily: 'Fredoka', letterSpacing: 1, fontWeight: 700,
+                  fontSize: 16, color: isWinner ? '#4ade80' : '#fb923c', fontFamily: 'Fredoka', letterSpacing: 1, fontWeight: 700,
                 }}>
                   PAPPU · {trackonUsed && !otherUsed ? 'TRACKON ONLY' : 'MULTI-PRODUCT'}
                 </div>
@@ -1007,11 +1007,11 @@ function Scoreboard({ visible, playerHealth, trackonUsed, otherUsed }: { visible
             </div>
             <div style={{ textAlign: 'right' }}>
               <div style={{
-                fontSize: 22, fontFamily: 'Fredoka', fontWeight: 900, color: isWinner ? '#4ade80' : '#f97316',
+                fontSize: 26, fontFamily: 'Fredoka', fontWeight: 900, color: isWinner ? '#4ade80' : '#f97316',
               }}>
                 {playerYield}%
               </div>
-              <div style={{ fontSize: 7, color: isWinner ? 'rgba(74,222,128,0.5)' : 'rgba(249,115,22,0.5)', fontFamily: 'Nunito' }}>
+              <div style={{ fontSize: 12, color: isWinner ? 'rgba(74,222,128,0.5)' : 'rgba(249,115,22,0.5)', fontFamily: 'Nunito' }}>
                 yield score
               </div>
             </div>
@@ -1032,15 +1032,15 @@ function Scoreboard({ visible, playerHealth, trackonUsed, otherUsed }: { visible
           borderRadius: 10, padding: '8px 12px', marginBottom: 12,
           display: 'flex', gap: 8, alignItems: 'center',
         }}>
-          <span style={{ fontSize: 16 }}>✨</span>
+          <span style={{ fontSize: 20 }}>✨</span>
           <div>
             <div style={{
-              fontSize: 7, color: '#fbbf24', fontFamily: 'Fredoka', letterSpacing: 1,
+              fontSize: 12, color: '#fbbf24', fontFamily: 'Fredoka', letterSpacing: 1,
             }}>
               THE LESSON
             </div>
             <div style={{
-              fontSize: 8, color: 'rgba(255,255,255,0.7)', fontFamily: 'Nunito',
+              fontSize: 14, color: 'rgba(255,255,255,0.7)', fontFamily: 'Nunito',
               marginTop: 2, lineHeight: 1.5,
             }}>
               One optimised solution beats many guesses. Trackon Gold wins every season.
@@ -1053,7 +1053,7 @@ function Scoreboard({ visible, playerHealth, trackonUsed, otherUsed }: { visible
           width: '100%', padding: '11px 0',
           background: 'linear-gradient(90deg, #15803d, #22c55e)',
           border: 'none', borderRadius: 10, cursor: 'pointer',
-          fontFamily: 'Fredoka', fontSize: 10, fontWeight: 700,
+          fontFamily: 'Fredoka', fontSize: 16, fontWeight: 700,
           color: '#ffffff', letterSpacing: 2,
           boxShadow: '0 4px 22px rgba(34,197,94,0.4)',
           transition: 'all 0.25s',
@@ -1193,7 +1193,7 @@ export default function App() {
 
   return (
     <div style={{
-      height: '100vh', width: '100vw', overflow: 'hidden', display: 'flex', justifyContent: 'center',
+      height: '100dvh', width: '100%', overflow: 'hidden', display: 'flex', justifyContent: 'center',
       background: 'linear-gradient(180deg, #f0fdf4, #bbf7d0)',
     }}>
       <div style={{
@@ -1212,13 +1212,13 @@ export default function App() {
           background: 'linear-gradient(180deg, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0) 100%)',
         }}>
           <div style={{
-            fontSize: 8, fontFamily: 'Fredoka', color: '#15803d',
+            fontSize: 14, fontFamily: 'Fredoka', color: '#15803d',
             letterSpacing: 5, marginBottom: 4,
           }}>
             INTERACTIVE FARM CHALLENGE
           </div>
           <h1 style={{
-            fontSize: 20, fontFamily: 'Fredoka', fontWeight: 900, margin: 0, letterSpacing: 1,
+            fontSize: 24, fontFamily: 'Fredoka', fontWeight: 900, margin: 0, letterSpacing: 1,
             color: '#eab308',
             textShadow: '0 2px 4px rgba(0,0,0,0.05)',
           }}>
@@ -1308,9 +1308,9 @@ export default function App() {
                     display: 'flex', alignItems: 'center', gap: 4,
                     backdropFilter: 'blur(4px)',
                   }}>
-                    <span style={{ fontSize: 8 }}>✨</span>
+                    <span style={{ fontSize: 14 }}>✨</span>
                     <span style={{
-                      fontSize: 6, fontFamily: 'Fredoka', fontWeight: 600,
+                      fontSize: 11, fontFamily: 'Fredoka', fontWeight: 600,
                       color: '#fbbf24', letterSpacing: 1,
                     }}>
                       TRACKON GOLD
@@ -1329,7 +1329,7 @@ export default function App() {
                     backdropFilter: 'blur(4px)',
                   }}>
                     <div style={{
-                      fontSize: 6, fontFamily: 'Fredoka', color: '#4ade80', letterSpacing: 0.5,
+                      fontSize: 11, fontFamily: 'Fredoka', color: '#4ade80', letterSpacing: 0.5,
                     }}>
                       {botPulse ? '✓ APPLYING' : '✓ OPTIMAL'}
                     </div>
@@ -1419,9 +1419,9 @@ export default function App() {
                         backdropFilter: 'blur(4px)',
                         display: 'flex', alignItems: 'center', gap: 3,
                       }}>
-                        <span style={{ fontSize: 9 }}>{PRODUCTS[selectedProduct].icon}</span>
+                        <span style={{ fontSize: 14 }}>{PRODUCTS[selectedProduct].icon}</span>
                         <span style={{
-                          fontSize: 6, fontFamily: 'Fredoka',
+                          fontSize: 11, fontFamily: 'Fredoka',
                           color: PRODUCTS[selectedProduct].color,
                         }}>
                           {PRODUCTS[selectedProduct].name.slice(0, 12)}
@@ -1429,7 +1429,7 @@ export default function App() {
                       </div>
                       {PRODUCTS[selectedProduct].name === 'Trackon Gold' && (
                         <div style={{
-                          fontSize: 5, color: '#fbbf24', fontFamily: 'Fredoka', background: 'rgba(0,0,0,0.6)',
+                          fontSize: 10, color: '#fbbf24', fontFamily: 'Fredoka', background: 'rgba(0,0,0,0.6)',
                           padding: '2px 4px', borderRadius: 4, border: '1px solid rgba(251,191,36,0.3)',
                           animation: 'fadeInUp 0.3s ease both', textShadow: '0 1px 2px #000',
                         }}>
@@ -1448,13 +1448,13 @@ export default function App() {
                     animation: 'fadeInUp 0.5s ease both',
                   }}>
                     <div style={{
-                      fontSize: 22,
+                      fontSize: 26,
                       animation: 'trophyBounce 0.8s ease-in-out infinite',
                     }}>
                       👇
                     </div>
                     <div style={{
-                      fontSize: 7, color: '#64748b', fontFamily: 'Fredoka',
+                      fontSize: 12, color: '#64748b', fontFamily: 'Fredoka',
                       letterSpacing: 1.5, marginTop: 4,
                     }}>
                       TAP TO APPLY
@@ -1471,7 +1471,7 @@ export default function App() {
                     backdropFilter: 'blur(4px)',
                   }}>
                     <span style={{
-                      fontSize: 6, fontFamily: 'Fredoka', color: '#475569',
+                      fontSize: 11, fontFamily: 'Fredoka', color: '#475569',
                     }}>
                       APPS: {tapCount}
                     </span>
@@ -1496,8 +1496,8 @@ export default function App() {
                     display: 'flex', alignItems: 'center', gap: 4,
                     animation: tapCount > 2 ? 'pulseButton 2s infinite' : 'fadeInUp 0.5s ease both',
                   }}>
-                    <span style={{ fontSize: 8 }}>⏩</span>
-                    <span style={{ fontSize: 7, fontFamily: 'Fredoka', fontWeight: 800, color: '#ffffff', letterSpacing: 1 }}>
+                    <span style={{ fontSize: 14 }}>⏩</span>
+                    <span style={{ fontSize: 12, fontFamily: 'Fredoka', fontWeight: 800, color: '#ffffff', letterSpacing: 1 }}>
                       HARVEST
                     </span>
                   </button>
@@ -1508,7 +1508,7 @@ export default function App() {
                     backdropFilter: 'blur(4px)',
                   }}>
                     <span style={{
-                      fontSize: 7, fontFamily: 'Fredoka', fontWeight: 700,
+                      fontSize: 12, fontFamily: 'Fredoka', fontWeight: 700,
                       color: '#475569', letterSpacing: 2,
                     }}>
                       VS
@@ -1532,14 +1532,14 @@ export default function App() {
                 backdropFilter: 'blur(6px)',
               }}>
                 <div style={{
-                  fontSize: 12, fontFamily: 'Fredoka', fontWeight: 900,
+                  fontSize: 18, fontFamily: 'Fredoka', fontWeight: 900,
                   color: '#fbbf24', letterSpacing: 2,
                   display: 'flex', alignItems: 'center', gap: 6,
                 }}>
                   ⏩ ×120
                 </div>
                 <div style={{
-                  fontSize: 7, color: '#64748b', fontFamily: 'Nunito',
+                  fontSize: 12, color: '#64748b', fontFamily: 'Nunito',
                   textAlign: 'center', marginTop: 2, letterSpacing: 1.5,
                 }}>
                   FAST FORWARD
@@ -1584,7 +1584,7 @@ export default function App() {
             zIndex: 20,
           }}>
             <div style={{
-              fontSize: 7, fontFamily: 'Fredoka', color: '#64748b',
+              fontSize: 12, fontFamily: 'Fredoka', color: '#64748b',
               letterSpacing: 2, textAlign: 'center', marginBottom: 12,
             }}>
               SELECT PRODUCT · TAP FARM TO APPLY
@@ -1629,7 +1629,7 @@ export default function App() {
               minHeight: 18,
             }}>
               <span style={{
-                fontSize: 12,
+                fontSize: 18,
                 fontFamily: 'Fredoka',
                 fontWeight: 700,
                 color: PRODUCTS[selectedProduct].color,
@@ -1664,7 +1664,7 @@ export default function App() {
                     transition: 'all 0.3s ease',
                   }} />
                   <span style={{
-                    fontSize: 5.5, fontFamily: 'Fredoka',
+                    fontSize: 10, fontFamily: 'Fredoka',
                     color: thisIdx === current ? 'rgba(74,222,128,0.7)' : 'rgba(255,255,255,0.3)',
                     letterSpacing: 0.5,
                   }}>
